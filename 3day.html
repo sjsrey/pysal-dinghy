@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>PySAL Activity Report
+   — 
+  Activity since 2023-01-02</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/primer/octicons/main/icons/comment-discussion-24.svg" type="image/svg+xml">
+  <style>
+  body {
+    font-family: sans-serif;
+    max-width: 60em;
+    margin: auto;
+    line-height: 1.3;
+    color: black;
+  }
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+  }
+  li {
+    margin: 0;
+  }
+  li p {
+    margin: 0;
+  }
+  ul.repos > li {
+    margin-top: 2em;
+  }
+  ul.entries > li {
+    margin-top: 1em;
+  }
+  ul.entries > li > p {
+    margin-left: 4.2em;
+  }
+  ul.entries > li > p:first-child {
+    text-indent: -2.1em;   /* not sure why it's half the 4.2em indent */
+  }
+  ul.comments > li > p {
+    margin-left: 4.2em;
+    padding-left: 1.6em;
+    text-indent: -1.6em;
+  }
+  ul.thread_comment ul.thread_comment {
+    padding-left: 1.6em;
+  }
+  ul.thread_comment > li > p {
+    padding-left: 7.3em;
+    text-indent: -1.6em;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #0969da;
+  }
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  .reponame {
+    font-weight: bold;
+    font-size: 150%;
+    margin-right: .5em;
+  }
+  .label {
+    padding: .2em .5em .1em .5em;
+    border-radius: 2em;
+    font-size: 75%;
+    opacity: .85;
+    vertical-align: middle;
+    white-space: nowrap;
+    /* GitHub label style computations, lifted from github.com */
+    border: 1px solid transparent;
+    --perceived-lightness: calc( ((var(--label-r) * 0.2126) + (var(--label-g) * 0.7152) + (var(--label-b) * 0.0722)) / 255 );
+    --lightness-switch: max(0, min(calc((var(--perceived-lightness) - var(--lightness-threshold)) * -1000), 1));
+    --lightness-threshold: 0.453;
+    --border-threshold: 0.96;
+    --border-alpha: max(0, min(calc((var(--perceived-lightness) - var(--border-threshold)) * 100), 1));
+    background: rgb(var(--label-r), var(--label-g), var(--label-b));
+    color: hsl(0, 0%, calc(var(--lightness-switch) * 100%));
+    border-color: hsla(var(--label-h), calc(var(--label-s) * 1%), calc((var(--label-l) - 25) * 1%), var(--border-alpha));
+  }
+  .homerepo {
+    color: #888;
+  }
+  .boring > p {
+    color: #888;
+  }
+  .footer {
+    color: #888;
+    font-style: italic;
+    margin-top: 3em;
+  }
+  .octicons {
+    display: inline-block;
+    padding-right: .3em;
+  }
+  .octicon {
+    width: 1.3em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    padding-bottom: .2em;
+  }
+  .octicon.star {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/star-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(98deg) saturate(8) brightness(0.5);
+  
+  }
+  .octicon.x {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/x-16.svg);
+  
+  }
+  .octicon.check {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/check-16.svg);
+  
+  }
+  .octicon.checkcircle {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/check-circle-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(98deg) saturate(8) brightness(0.5);
+  
+  }
+  .octicon.comment.resolved {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/tasklist-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(98deg) saturate(8) brightness(0.5);
+  
+  }
+  .octicon.comment {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/comment-16.svg);
+  
+  }
+  .octicon.eye {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/eye-16.svg);
+  
+  }
+  .octicon.filediff {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/file-diff-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(316deg) saturate(6) brightness(.8);
+  
+  }
+  .octicon.dash {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/dash-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(172deg) saturate(0.43) brightness(1.25);
+  
+  }
+  .octicon.pull {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/git-pull-request-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(98deg) saturate(8) brightness(0.5);
+  
+  }
+  .octicon.pull.draft {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/git-pull-request-draft-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(172deg) saturate(0.43) brightness(0.65);
+  
+  }
+  .octicon.pull.closed {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/git-pull-request-closed-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(316deg) saturate(6) brightness(.8);
+  
+  }
+  .octicon.pull.merged {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(220deg) saturate(8) brightness(.65);
+  
+  }
+  .octicon.issue {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/issue-opened-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(98deg) saturate(8) brightness(0.5);
+  
+  }
+  .octicon.issue.closed {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/issue-closed-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(220deg) saturate(8) brightness(.65);
+  
+  }
+  .octicon.issue.wontdo {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/skip-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(172deg) saturate(0.43) brightness(0.65);
+  
+  }
+  .octicon.tag {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/tag-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(172deg) saturate(0.43) brightness(0.65);
+  
+  }
+  .octicon.commit {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/git-commit-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(172deg) saturate(0.43) brightness(0.65);
+  
+  }
+  .octicon.release {
+    background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/package-16.svg);
+  filter: invert(1) brightness(.5) sepia(1) hue-rotate(98deg) saturate(8) brightness(0.5);
+  
+  }
+  </style>
+</head>
+<body>
+
+<h1>PySAL Activity Report
+   — 
+  Activity since 2023-01-02</h1>
+
+<ul class="repos">
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/pysal">pysal/pysal</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/libpysal">pysal/libpysal</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <ul class="entries">
+          <li class="">
+
+              <p><a href="https://github.com/pysal/libpysal/pull/503"><span class="octicons" title="newly created; newly closed; closed pull request"><span class="octicon star"></span><span class="octicon x"></span><span class="octicon closed pull"></span></span><b>fix: Import-time fetching of example dataset metadata by refactoring top-level __init__.py</b> #503</a>
+              [iwishiwasaneagle]
+
+              
+              </p><p>Refactor import process to ensure that init files for the individual modules are not run at import time if not...</p><ul class="comments">
+                  <li>
+                      <p><a href="https://github.com/pysal/libpysal/pull/503#issuecomment-1369562681" title="01-03 09:42">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>iwishiwasaneagle</b>: I was unsure whether to just remove from . import examples or also the other options. I went for...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pysal/libpysal/pull/503#issuecomment-1369715771" title="01-03 12:31">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>iwishiwasaneagle</b>: I see the https://github.com/pysal/libpysal/actions/runs/3828396150/workflow#L16 doesn&#39;t like...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pysal/libpysal/pull/503#issuecomment-1370334086" title="01-03 23:41">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>sjsrey</b>: I see the https://github.com/pysal/libpysal/actions/runs/3828396150/workflow#L16 doesn&#39;t like...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pysal/libpysal/pull/503#issuecomment-1370335671" title="01-03 23:44">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>sjsrey</b>: I was unsure whether to just remove from . import examples or also the other options. I went for...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pysal/libpysal/pull/503#discussion_r1061039576" title="01-03 23:47">
+                        
+                            <span class="octicon eye" title="reviewed"></span>
+                          
+                        
+                        <b>sjsrey</b>: leave in lines 23-25 (i.e., keep the imports for cg, io, and weights) as they don&#39;t do any...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pysal/libpysal/pull/503#issuecomment-1370373132" title="01-04 00:52">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>knaaptime</b>: i think even removing examples from the init will cause some downstream breakage (i know for...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pysal/libpysal/pull/503#issuecomment-1370427899" title="01-04 02:43">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>sjsrey</b>: @knaaptime good points on side-effects from making the import of examples explicit and not...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pysal/libpysal/pull/503#issuecomment-1370673676" title="01-04 09:24">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>iwishiwasaneagle</b>: Yup, good point @knaaptime. However, any networking happening at import time should be removed.</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pysal/libpysal/pull/503#issuecomment-1371518918" title="01-04 22:52">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>sjsrey</b>: ref #504</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="">
+
+              <p><a href="https://github.com/pysal/libpysal/pull/504"><span class="octicons" title="newly created; pull request"><span class="octicon star"></span><span class="octicon dash"></span><span class="octicon pull"></span></span><b>Remove automatic polling of remotes</b> #504</a>
+              [sjsrey]
+
+              
+              </p><p>This addresses #499 by no longer polling the remotes on init.
+Remotes would be curated prior to each release instead.</p><ul class="comments">
+                  <li>
+                      <p><a href="https://github.com/pysal/libpysal/pull/504#pullrequestreview-1236598075" title="01-04 23:16">
+                        <span class="octicon checkcircle" title="reviewed, approved"></span>
+                          
+                        
+                        <b>knaaptime</b>: sweet</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pysal/libpysal/pull/504#issuecomment-1371935555" title="01-05 08:50">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>iwishiwasaneagle</b>: Looks good to me. Cheers for creating this fix @sjsrey!</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pysal/libpysal/pull/504#pullrequestreview-1237029972" title="01-05 08:52">
+                        <span class="octicon checkcircle" title="reviewed, approved"></span>
+                          
+                        
+                        <b>iwishiwasaneagle</b></a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          </ul>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/esda">pysal/esda</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/giddy">pysal/giddy</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/inequality">pysal/inequality</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/momepy">pysal/momepy</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <ul class="entries">
+          <li class="">
+
+              <p><a href="https://github.com/pysal/momepy/pull/396"><span class="octicons" title="draft pull request"><span class="octicon dash"></span><span class="octicon dash"></span><span class="octicon draft pull"></span></span><b>ENH: helper functions for geometry-based network simplification</b> #396</a>
+              [gregmaya]
+
+              <span class="label" style="--label-r:162;--label-g:238;--label-b:239;--label-h:180;--label-s:70;--label-l:78;">enhancement</span>
+                <span class="label" style="--label-r:191;--label-g:218;--label-b:220;--label-h:184;--label-s:29;--label-l:80;">GSoC 2022</span>
+                
+              </p><p>I wanted to leave this PR open to be able to refer to it in my GSOC README.
+I know there are quite a few things...</p><ul class="comments">
+                  <li>
+                      <p><a href="https://github.com/pysal/momepy/pull/396#issuecomment-1369623311" title="01-03 10:47">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>gregmaya</b>: @martinfleis I feel very sorry that I&#39;ve not been able to contribute more to this. As a matter...</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          <li class="closed">
+
+              <p><a href="https://github.com/pysal/momepy/issues/451"><span class="octicons" title="closed issue"><span class="octicon dash"></span><span class="octicon dash"></span><span class="octicon closed issue"></span></span><b>Import of libpysal causes libpysal examples to download which slows down initialization or completely hangs</b> #451</a>
+              [iwishiwasaneagle]
+
+              <span class="label" style="--label-r:215;--label-g:58;--label-b:74;--label-h:353;--label-s:66;--label-l:53;">bug</span>
+                
+              </p><p>Describe the problem
+There are multiple imports of libpysal, such as 
+  
+    
+      momepy/momepy/weights.py
+    
+  ...</p><ul class="comments">
+                  <li>
+                      <p><a href="https://github.com/pysal/momepy/issues/451#issuecomment-1371936861" title="01-05 08:52">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>iwishiwasaneagle</b>: Fix has been created here pysal/libpysal#504</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          </ul>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/pointpats">pysal/pointpats</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/segregation">pysal/segregation</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/spaghetti">pysal/spaghetti</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/access">pysal/access</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/mgwr">pysal/mgwr</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <ul class="entries">
+          <li class="closed">
+
+              <p><a href="https://github.com/pysal/mgwr/issues/122"><span class="octicons" title="newly closed; closed issue"><span class="octicon dash"></span><span class="octicon check"></span><span class="octicon closed issue"></span></span><b>A Error raised when I bulid a mgwr model,which is&#34;Error displaying widget: model not found&#34;,how can I solve it?</b> #122</a>
+              [yilvzhishi]
+
+              
+              </p><p>A Error raised when I bulid a mgwr model,which is&#34;Error displaying widget: model not found&#34;.
+This is the error...</p><ul class="comments">
+                  <li>
+                      <p><a href="https://github.com/pysal/mgwr/issues/122#issuecomment-1369685450" title="01-03 11:57">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>yilvzhishi</b>: Can you paste in the code from the screenshot above? That will help us for debugging.
+
+Thank you...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pysal/mgwr/issues/122#issuecomment-1369724148" title="01-03 12:41">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>yilvzhishi</b>: try installing/updating ipywidgets in that environment
+
+I test &#34;pip uninstall ipywidgets&#34; and...</a></p>
+                      
+                    </li>
+                  <li>
+                      <p><a href="https://github.com/pysal/mgwr/issues/122#issuecomment-1370483147" title="01-04 04:45">
+                        
+                          <span class="octicon comment" title="comment"></span>
+                        
+                        <b>yilvzhishi</b>: Record My solution to the problem.
+I find that too high veision of ipywidgets causes this...</a></p>
+                      
+                    </li>
+                  </ul>
+              </li>
+          </ul>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/spglm">pysal/spglm</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/spint">pysal/spint</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/spopt">pysal/spopt</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/spreg">pysal/spreg</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/spvcm">pysal/spvcm</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/tobler">pysal/tobler</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/legendgram">pysal/legendgram</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/mapclassify">pysal/mapclassify</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  <li>
+      <p><span class="reponame"><a href="https://github.com/pysal/splot">pysal/splot</a></span>
+      repo issues, pull requests, and releases
+      </p>
+      
+        <p>Nothing happening</p>
+      
+    </li>
+  </ul>
+
+<p class="footer">
+  created at 2023-01-05 18:05 by
+  <a href="https://pypi.org/project/dinghy/1.0.0">
+    dinghy
+    <span class="dinghy_version">1.0.0</span></a>.
+</p>
+</body>
+</html>
