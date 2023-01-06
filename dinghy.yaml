@@ -1,0 +1,62 @@
+# This is used to create the sample digest for the readme.
+
+defaults:
+  title: PySAL Activity Report
+  items:
+    - https://github.com/pysal/pysal
+    - https://github.com/pysal/libpysal
+    - https://github.com/pysal/esda
+    - https://github.com/pysal/giddy
+    - https://github.com/pysal/inequality
+    - https://github.com/pysal/momepy
+    - https://github.com/pysal/pointpats
+    - https://github.com/pysal/segregation
+    - https://github.com/pysal/spaghetti
+    - https://github.com/pysal/access
+    - https://github.com/pysal/mgwr
+    - https://github.com/pysal/spglm
+    - https://github.com/pysal/spint
+    - https://github.com/pysal/spopt
+    - https://github.com/pysal/spreg
+    - https://github.com/pysal/spvcm
+    - https://github.com/pysal/tobler
+    - https://github.com/pysal/legendgram
+    - https://github.com/pysal/mapclassify
+    - https://github.com/pysal/splot
+
+digests:
+  - digest: 1week.html
+    since: 1 week
+
+  - digest: 3day.html
+    since: 3 day
+
+  - digest: 1day.html
+    since: 1 day
+
+  - digest: 6month.html
+    since: 24 week 
+
+  - digest: releases.html
+    since: 24 week
+    items:
+      - https://github.com/pysal/pysal/releases
+      - https://github.com/pysal/libpysal/releases
+      - https://github.com/pysal/esda/releases
+      - https://github.com/pysal/giddy/releases
+      - https://github.com/pysal/inequality/releases
+      - https://github.com/pysal/momepy/releases
+      - https://github.com/pysal/pointpats/releases
+      - https://github.com/pysal/segregation/releases
+      - https://github.com/pysal/spaghetti/releases
+      - https://github.com/pysal/access/releases
+      - https://github.com/pysal/mgwr/releases
+      - https://github.com/pysal/spglm/releases
+      - https://github.com/pysal/spint/releases
+      - https://github.com/pysal/spopt/releases
+      - https://github.com/pysal/spreg/releases
+      - https://github.com/pysal/spvcm/releases
+      - https://github.com/pysal/tobler/releases
+      - https://github.com/pysal/legendgram/releases
+      - https://github.com/pysal/mapclassify/releases
+      - https://github.com/pysal/splot/releases
